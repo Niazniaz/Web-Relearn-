@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        canvas{
+        width: 100%;
+        background-color: black;
+    }
+
+    body,html{
+        height: 100%;
+        margin: 0;
+    }
+    </style>
+    <script src="lib/paper-full.js"></script>
+    <script type="text/paperscript" canvas="myc">
+        var circ=[];
+        function onKeyDown(event)
+        {
+            var max= new Point(view.size.width, view.size.height);
+            var rand=Point.random();
+            var pop=max*rand;
+            var circN=new Path.Circle(pop,500);
+            circN.fillColor="red";
+            circ.push(circN);
+        }
+
+
+        var anCirc= new Path.Circle(new Point(500,500),100);
+        anCirc.fillColor="orange";
+        function onFrame(event)
+        {
+            for (var i=0;i<circ.length;i++)
+            {
+                circ[i].fillColor.hue+=1;
+                circ[i].scale(0.9);
+            }
+            anCirc.fillColor.hue+=1;
+            anCirc.scale(0.99);
+        }
+
+
+    </script>
+    <title>Keypresses</title>
+</head>
+<body>
+    <canvas id="myc"></canvas>
+</body>
+</html>

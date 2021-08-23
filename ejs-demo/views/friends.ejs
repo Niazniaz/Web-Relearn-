@@ -1,0 +1,16 @@
+<%- include('partials/h') %> 
+
+<h1>hello frens</h1>
+<ul>
+<% fri.forEach((f)=>{ %>
+    <li><%= f %> </li>  
+<% }) %>
+</ul>
+
+<form action="/addf" method="POST">
+<input type="text" placeholder="name" name="newFri">
+<input type="submit" value="add">
+</form>
+
+
+<%- include('partials/f') %> 

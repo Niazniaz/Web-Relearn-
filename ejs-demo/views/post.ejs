@@ -1,0 +1,23 @@
+<%- include('partials/h') %> 
+
+<h1>here are the posts</h1>
+<ul>
+    <!--
+<% for (var i=0;i<posts.length;i++) {%>
+    <li> 
+    <%= posts[i].tit%>-<%= posts[i].aut %>
+    </li>
+    <% } %> 
+    -->
+
+<% posts.forEach((post)=>{ %>
+    <li> 
+        <%= post.tit%>-<%= post.aut %>
+    </li>
+        
+<% }); %>
+</ul>
+
+<%- include('partials/f')  %>
+
+

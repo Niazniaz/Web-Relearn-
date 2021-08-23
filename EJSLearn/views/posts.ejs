@@ -1,0 +1,11 @@
+<%- include ("partials/header") %> 
+
+<h1>Here are the posts</h1>
+
+<% posts.forEach(function (post){ %>
+<li>
+    <%= post.title %> was written by <em><%= post.author %></em> 
+</li>
+<% }) %> 
+
+<%- include ("partials/footer") %> 
